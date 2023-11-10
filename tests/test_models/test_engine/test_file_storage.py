@@ -79,7 +79,7 @@ class FileStorageTests(unittest.TestCase):
             self.assertEqual(dobj[key].to_dict(), value.to_dict())
 
     def testSaveSelf(self):
-        """ Check save self """
+        """ Check if save self is successful """
         msg = "save() takes 1 positional argument but 2 were given"
         with self.assertRaises(TypeError) as e:
             FileStorage.save(self, 100)
@@ -87,7 +87,7 @@ class FileStorageTests(unittest.TestCase):
         self.assertEqual(str(e.exception), msg)
 
     def test_save_FileStorage(self):
-        """ Test if 'new' method is working good """
+        """ Test if 'new' _method is working well """
         var1 = self.my_model.to_dict()
         new_key = var1['__class__'] + "." + var1['id']
         storage.save()
