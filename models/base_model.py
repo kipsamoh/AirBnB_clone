@@ -41,7 +41,7 @@ class BaseModel:
 
     def to_dict(self):
         """creates a new dictionary, adding a key and returning
-        datemtimes converted to strings
+        datetime converted to strings
         """
         new_dict = {}
 
