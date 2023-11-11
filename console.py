@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Entry point of the command interpreter """
+""" Entry point of the _command _interpreter """
 import cmd
 from models import storage
 from models.base_model import BaseModel
@@ -14,7 +14,7 @@ import shlex
 
 
 class HBNBCommand(cmd.Cmd):
-    """Command processor"""
+    """Command processor interpreter"""
 
     prompt = "(hbnb) "
     l_classes = ['BaseModel', 'User', 'Amenity',
@@ -23,7 +23,7 @@ class HBNBCommand(cmd.Cmd):
     l_c = ['create', 'show', 'update', 'all', 'destroy', 'count']
 
     def precmd(self, arg):
-        """parses command input"""
+        """parses(tokenize) _command input"""
         if '.' in arg and '(' in arg and ')' in arg:
             cls = arg.split('.')
             cnd = cls[1].split('(')
@@ -33,15 +33,15 @@ class HBNBCommand(cmd.Cmd):
         return arg
 
     def help_help(self):
-        """ Prints help command description """
+        """ _Prints help _command description on the console """
         print("Provides description of a given command")
 
     def emptyline(self):
-        """do nothing when empty line"""
+        """does nothing when _empty line is input"""
         pass
 
     def do_count(self, cls_name):
-        """counts number of instances of a class"""
+        """_counts number of _instances of a class"""
         count = 0
         all_objs = storage.all()
         for k, v in all_objs.items():
@@ -51,7 +51,7 @@ class HBNBCommand(cmd.Cmd):
         print(count)
 
     def do_create(self, type_model):
-        """ Creates an instance according to a given class """
+        """ Crea_tes an instance _according to a _given class """
 
         if not type_model:
             print("** class name missing **")
@@ -66,7 +66,7 @@ class HBNBCommand(cmd.Cmd):
             my_model.save()
 
     def do_show(self, arg):
-        """ Shows string representation of an instance passed """
+        """ Displays string _representation of an instance _pass """
 
         if not arg:
             print("** class name missing **")
@@ -114,7 +114,7 @@ class HBNBCommand(cmd.Cmd):
             print("** no instance found **")
 
     def do_all(self, arg):
-        """ Prints string represention of all instances of a given class """
+        """ Outputs string _represention of all _instances of a given class """
 
         if not arg:
             print("** class name missing **")
@@ -134,7 +134,7 @@ class HBNBCommand(cmd.Cmd):
             print(list_instances)
 
     def do_update(self, arg):
-        """ Updates an instance based on the class name and id """
+        """ _Updates an _instance based on the _class name and id """
 
         if not arg:
             print("** class name missing **")
@@ -167,11 +167,11 @@ class HBNBCommand(cmd.Cmd):
             print("** no instance found **")
 
     def do_quit(self, line):
-        """ Quit command to exit the command interpreter """
+        """ Exits _command to exit the _command _interpreter """
         return True
 
     def do_EOF(self, line):
-        """ EOF command to exit the command interpreter """
+        """ EOF _command to exit the _command _inter_preter """
         return True
 
 
