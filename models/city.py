@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 """
-Defines city
+Defines city attribute
 """
 from models.base_model import BaseModel
 
 
 class City(BaseModel):
-    """defines city to look for"""
+    """defines the city to pick from"""
     state_id = ""
     name = ""
