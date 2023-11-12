@@ -16,5 +16,6 @@ set -x
 # Generate AUTHORS file, placing kipsamoh <kipsamoh@gmail.com> as the first contributor
 {
   printf "%-4s %-30s %-50s\n" "# This file lists all contributors to the repository." "" ""
-  git log --format='%aN <%aE>' | grep -v -E '^(kipsamoh <133492659\+kipsamoh@users\.noreply\.github\.com>|>)$' | LC_ALL=C.UTF-8 sort -uf | sed 's/ / /g'
+  git log --format='%aN <%aE>' | grep -v -E '^(kipsamoh <133492659\+kipsamoh@users\.noreply\.github\.com>|Daniel Chebet <133492659\+kipsamoh@users\.noreply\.github\.com>|>)$' | LC_ALL=C.UTF-8 sort -uf | sed 's/ / /g'
 } > "${ROOTDIR}/AirBnB_clone/AUTHORS"
+
