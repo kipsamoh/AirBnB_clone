@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Unittest for amenity.py
+amenity.py unittests
 """
 import unittest
 from models.state import State
@@ -8,21 +8,21 @@ import datetime
 
 
 class TestState(unittest.TestCase):
-    """ Tests instances and methods from State class """
+    """ State class instances and methods test """
 
     s = State()
 
     def test_class_exists(self):
-        """tests if class exists"""
+        """checks if class exists"""
         res = "<class 'models.state.State'>"
         self.assertEqual(str(type(self.s)), res)
 
     def test_user_inheritance(self):
-        """test if State is a subclass of BaseModel"""
+        """checks whether State is a subclass of BaseModel"""
         self.assertIsInstance(self.s, State)
 
     def testHasAttributes(self):
-        """verify if attributes exist"""
+        """check if attributes exist"""
         self.assertTrue(hasattr(self.s, 'name'))
         self.assertTrue(hasattr(self.s, 'id'))
         self.assertTrue(hasattr(self.s, 'created_at'))
