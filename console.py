@@ -140,11 +140,11 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
             return
 
-        a = ""
+        y = ""
         for argv in arg.split(','):
-            a = a + argv
+            y = y + argv
 
-        args = shlex.split(a)
+        args = shlex.split(y)
 
         if args[0] not in HBNBCommand.l_classes:
             print("** class doesn't exist **")
