@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Unittest for user.py
+user.py unittests
 """
 import unittest
 from models.user import User
@@ -8,20 +8,20 @@ import datetime
 
 
 class UserCase(unittest.TestCase):
-    """Tests instances and methods from user class"""
+    """ user class instances and methods tests"""
 
     u = User()
 
     def test_class_exists(self):
-        """tests if class exists"""
+        """checks if class exists"""
         self.assertEqual(str(type(self.u)), "<class 'models.user.User'>")
 
     def test_user_inheritance(self):
-        """test if User is a subclass of BaseModel"""
+        """checks if User is a sub_class of Base_Model"""
         self.assertIsInstance(self.u, User)
 
     def testHasAttributes(self):
-        """verify if attributes exist"""
+        """validate if attributes exist"""
         self.assertTrue(hasattr(self.u, 'email'))
         self.assertTrue(hasattr(self.u, 'password'))
         self.assertTrue(hasattr(self.u, 'first_name'))
@@ -31,7 +31,7 @@ class UserCase(unittest.TestCase):
         self.assertTrue(hasattr(self.u, 'updated_at'))
 
     def test_types(self):
-        """tests if the type of the attribute is the correct one"""
+        """checks if attribute is the correct one"""
         self.assertIsInstance(self.u.first_name, str)
         self.assertIsInstance(self.u.last_name, str)
         self.assertIsInstance(self.u.email, str)
