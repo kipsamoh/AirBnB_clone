@@ -11,7 +11,7 @@ import json
 class FileStorageTests(unittest.TestCase):
     """ File_Storage Tests suites """
 
-    my_model = BaseModel()
+    _mymodel = BaseModel()
 
     def testClassInstance(self):
         """ Checks for instances """
@@ -19,9 +19,9 @@ class FileStorageTests(unittest.TestCase):
 
     def testStoreBaseModel(self):
         """ save and reload test functions """
-        self.my_model.full_name = "BaseModel Instance"
-        self.my_model.save()
-        bm_dict = self.my_model.to_dict()
+        self._mymodel.full_name = "BaseModel Instance"
+        self._mymodel.save()
+        bm_dict = self._mymodel.to_dict()
         all_objs = storage.all()
 
         key = bm_dict['__class__'] + "." + bm_dict['id']
@@ -29,9 +29,9 @@ class FileStorageTests(unittest.TestCase):
 
     def testStoreBaseModel2(self):
         """ save, reload and update tests functions """
-        self.my_model.my_name = "First name"
-        self.my_model.save()
-        bm_dict = self.my_model.to_dict()
+        self._mymodel.my_name = "First name"
+        self._mymodel.save()
+        bm_dict = self._mymodel.to_dict()
         all_objs = storage.all()
 
         key = bm_dict['__class__'] + "." + bm_dict['id']
@@ -42,9 +42,9 @@ class FileStorageTests(unittest.TestCase):
         create_1 = bm_dict['created_at']
         update_1 = bm_dict['updated_at']
 
-        self.my_model.my_name = "Second name"
-        self.my_model.save()
-        bm_dict = self.my_model.to_dict()
+        self._mymodel.my_name = "Second name"
+        self._mymodel.save()
+        bm_dict = self._mymodel.to_dict()
         all_objs = storage.all()
 
         self.assertEqual(key in all_objs, True)
@@ -63,13 +63,13 @@ class FileStorageTests(unittest.TestCase):
 
     def testsave(self):
         """checks if JSON file exists"""
-        self.my_model.save()
+        self._mymodel.save()
         self.assertEqual(os.path.exists(storage._FileStorage__file_path), True)
         self.assertEqual(storage.all(), storage._FileStorage__objects)
 
     def testreload(self):
         """tests if the reload functions works """
-        self.my_model.save()
+        self._mymodel.save()
         self.assertEqual(os.path.exists(storage._FileStorage__file_path), True)
         dobj = storage.all()
         FileStorage._FileStorage__objects = {}
@@ -88,7 +88,7 @@ class FileStorageTests(unittest.TestCase):
 
     def test_save_FileStorage(self):
         """ checks if new_method is working fine """
-        var_1 = self.my_model.to_dict()
+        var_1 = self._mymodel.to_dict()
         new_key = var_1['__class__'] + "." + var_1['id']
         storage.save()
         with open("file.json", 'r') as fd:
