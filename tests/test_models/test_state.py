@@ -14,8 +14,8 @@ class TestState(unittest.TestCase):
 
     def test_class_exists(self):
         """checks if class exists"""
-        _res = "<class 'models.state.State'>"
-        self.assertEqual(str(type(self._s)), _res)
+        res = "<class 'models.state.State'>"
+        self.assertEqual(str(type(self._s)), res)
 
     def test_user_inheritance(self):
         """checks whether State is a subclass of BaseModel"""
