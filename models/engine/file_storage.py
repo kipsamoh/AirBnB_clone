@@ -8,12 +8,12 @@ import os
 
 
 class FileStorage:
-    """ Class that serializes and deserializes JSON objects """
+    """ Class which serializes & deserializes JSON objects """
     __file_path = "file.json"
     __objects = {}
 
     def all(self):
-        """ Returns the dictionary __objects """
+        """ Returns the di_ctionary __objects """
         return FileStorage.__objects
 
     def new(self, obj):
