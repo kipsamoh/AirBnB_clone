@@ -17,6 +17,5 @@ set -x
 cat > "${ROOTDIR}/AirBnB_clone/AUTHORS" <<- EOF
     # This file lists all contributors to the repository.
 
-    $(git log --format='%aN <%aE>' | grep -v -E '^(kipsamoh <133492659\+kipsamoh@users\.noreply\.github\.com>|kipsamoh <kipsamoh@gmail\.com>)$' | LC_ALL=C.UTF-8 sort -uf | sed 's/ /_/g')
-    Daniel Chebet <kipsamoh@gmail.com>
+    $(git log --format='%aN <%aE>' | grep -v -E '^(kipsamoh <133492659\+kipsamoh@users\.noreply\.github\.com>|kipsamoh <kipsamoh@gmail\.com>)$' | LC_ALL=C.UTF-8 sort -uf | sed 's/ /_/g'
 EOF
